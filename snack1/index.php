@@ -43,18 +43,19 @@ Olimpia Milano - Cantù | 55-60 -->
   ?>
 
   <h1>Calendario partite Basket</h1>
-
-  <?php
-    for ($i=0; $i < count($match); $i++) { 
-  ?>
-  <div>
+  <ul>
     <?php
-    echo $match[$i]["casa"] ." - " .$match[$i]["ospite"] ." | " .$match[$i]["punti casa"] ."-" .$match[$i]["punti ospite"];
+      for ($i=0; $i < count($match); $i++) { 
     ?>
-  </div>
-  <?php
-    }
-  ?>
+    <li>
+      <?php
+      echo $match[$i]["casa"] ." - " .$match[$i]["ospite"] ." | " .$match[$i]["punti casa"] ."-" .$match[$i]["punti ospite"];
+      ?>
+    </li>
+    <?php
+      }
+    ?>
+  </ul>
   
 </body>
 </html>
