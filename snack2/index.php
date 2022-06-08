@@ -10,13 +10,23 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
   <title>Document</title>
 </head>
 <body>
-  
+  <h3>Inserisca i suoi dati</h3>
   <?php 
-  $user_name = GET_("name");
-  $user_mail = GET_("mail");
-  $user_age = GET_("age");
+  $user_name = $_GET["name"];
+  $user_mail = $_GET["mail"];
+  $user_age = $_GET["age"];
 
+  echo "Name: " .ucfirst($user_name) ."<br>" ."Mail: " .$user_mail ."<br>" ."Età: ".$user_age; 
   ?>
+
+  <?php 
+    if (strlen($user_name) <= 3 || strpos($user_mail, "@") === false || strpos($user_mail, ".") === false || !is_numeric($user_age) ) {
+      echo "<h1>Accesso Negato</h1>";
+    } else {
+      echo "<h1>Accesso Riuscito</h1>";
+    }
+  ?>
+
 
 </body>
 </html>
